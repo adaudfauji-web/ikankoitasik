@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login Admin | IkankoiTasik</title>
+<link rel="stylesheet" href="stylee.css" />
+<style>
+.login-box {
+max-width: 400px;
+margin: 120px auto;
+background: #fff;
+padding: 30px;
+border-radius: 15px;
+box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+text-align: center;
+}
+.login-box h2 {
+margin-bottom: 20px;
+color: #0d47a1;
+}
+.login-box input {
+width: 100%;
+padding: 12px;
+margin: 10px 0;
+border-radius: 8px;
+border: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
+
+
+<div class="login-box">
+<h2>Login Admin</h2>
+<input type="text" id="username" placeholder="Username admin" />
+<input type="password" id="password" placeholder="Password" />
+<button class="btn" onclick="loginAdmin()">Login</button>
+<p id="error" style="color:red; margin-top:10px;"></p>
+</div>
+
+
+<script>
+function loginAdmin() {
+const user = document.getElementById('username').value;
+const pass = document.getElementById('password').value;
+
+
+// login sederhana (nanti bisa diganti database)
+if (user === 'asep' && pass === 'ganteng123') {
+localStorage.setItem('adminLogin', 'true');
+window.location.href = 'dashboard.html';
+} else {
+document.getElementById('error').innerText = 'Username atau password salah';
+}
+}
+</script>
+
+
+</body>
+</html>

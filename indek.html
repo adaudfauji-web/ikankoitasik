@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IkankoiTasik | Marketplace Ikan Koi</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+    body { background: #f4f6f8; color: #333; }
+
+    header {
+      background: linear-gradient(135deg, #0d47a1, #1976d2);
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .container-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
+      box-shadow: 0 2px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .logo:hover{
+      transform: scale(1.05);
+    }
+
+    header h1 { font-size: 24px; letter-spacing: 1px; }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .hero {
+      background: url('image/koi\ 1.jpg') center/cover no-repeat;
+      padding: 100px 40px;
+      text-align: center;
+      color: white;
+    }
+    .hero h2 { font-size: 40px; margin-bottom: 15px; }
+    .hero p { font-size: 18px; margin-bottom: 25px; }
+    .btn {
+      background: #ff9800;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover { background: #fb8c00; }
+
+    .container { padding: 40px; max-width: 1200px; margin: auto; }
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .search-box {
+      padding: 20px;
+      background: #fff;
+      border-bottom: 1px solid #333;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-body { padding: 20px; }
+    .card-body h3 { font-size: 20px; margin-bottom: 10px; }
+    .price { color: #1976d2; font-weight: bold; margin-bottom: 15px; }
+
+    footer {
+      background: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="container-logo">
+    <img src="image/nakoi.jpeg" alt="Logo IkankoiTasik" class="logo" />
+  </div>
+  <h1>IkankoiTasik</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#produk">Produk</a>
+    <a href="#">Login</a>
+    <a href="#">Daftar</a>
+  </nav>
+</header>
+
+  <div class="search-box" style="text-align:center; margin-top: 20px;">
+    <input
+      font-size= 18px;
+      size="50px"
+      type="text"
+      id="searchInput"
+      placeholder="🔎Cari ikan koi..."
+      onkeyup="searchProduk()"
+      style="padding: 5px; width: 80%; max-width: 500px; border-radius: 20px; border: 1px solid #17d1c8; font-size:16px;"
+    />
+  </div>
+
+<section class="hero">
+  <h2>Pusat Ikan Koi Tasikmalaya</h2>
+  <p>Beli ikan koi berkualitas langsung dari peternak terpercaya</p>
+  <a href="#produk" class="btn">Order Sekarang</a>
+</section>
+
+<section class="container" id="produk">
+  <h2 class="section-title">Produk Terbaru</h2>
+  <div class="products">
+    <div class="card">
+      <img src="image/koi kohaku.jpg" />
+      <div class="card-body">
+        <h3>Koi Kohaku</h3>
+        <p class="price">Rp 550.000</p>
+        <a class="btn" href="#" onclick="orderWA('Koi Kohaku', 'Rp 550.000')">Order</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/koi sanke.jpg" />
+      <div class="card-body">
+        <h3>Koi Sanke</h3>
+        <p class="price">Rp 250.000</p>
+        <a class="btn" href="#" onclick="orderWA('Koi Sanke', 'Rp 250.000')">Order</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/koi showa.jpg" />
+      <div class="card-body">
+        <h3>Koi Showa</h3>
+        <p class="price">Rp 400.000</p>
+        <a class="btn" href="#" onclick="orderWA('Koi Showa', 'Rp 400.000')">Order</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/koi tancho.jpg" />
+      <div class="card-body">
+        <h3>Koi tancho</h3>
+        <p class="price">Rp 1.500.000</p>
+        <a class="btn" href="#" onclick="orderWA('Koi Tancho', 'Rp 1.500.000')">Order</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img src="image/koi hi Utsuri.jpg" />
+      <div class="card-body">
+        <h3>koi Hi Utsuri</h3>
+        <p class="price">Rp 100.000</p>
+        <a class="btn" href="#" onclick="orderWA('koi Hi Utsuri','Rp 100.000')">Order</a>
+      </div>
+    </div>
+ 
+    <div class="card">
+      <img src="image/koi ki utsuri.jpg" />
+      <div class="card-body">
+        <h3>koi ki utsuri</h3>
+        <p class="price">Rp 138.000</p>
+        <a class="btn" href="#" onclick="orderWA('koi ki utsuri','Rp 138.000')">Order</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/koi Shiro Utsuri.jpg" />
+      <div class="card-body">
+        <h3>koi shiro utsuri</h3>
+        <p class="price">Rp 110.000</p>
+        <a class="btn" href="#" onclick="orderWA('koi shiro utsuri','Rp 110.000')">Order</a>
+      </div>
+    </div>  
+     
+    <div class="card">
+      <img src="image/koi shiro bekko.jpg" />
+      <div class="card-body">
+        <h3>koi shiro bekko</h3>
+        <p class="price">Rp 250.000</p>
+        <a class="btn" href="#" onclick="orderWA('koi shiro bekko','Rp 250.000')">Order</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 IkankoiTasik. Marketplace Ikan Koi Profesional.</p>
+</footer>
+
+<script>
+  const productList = document.getElementById('productList');
+  const products = JSON.parse(localStorage.getItem('products')) || [];
+  
+  function renderProduk(data) {
+    productList.innerHTML = '';
+    
+    if (data.length === 0) {
+      productList.innerHTML = '<p>Produk tidak ditemukan</p>';
+      return;
+    }
+
+    data.forEach(p => {
+      productList.innerHTML += `
+        <div class="card">
+          <img src="${p.image}">
+          <div class="card-body">
+            <h3>${p.name}</h3>
+            <p class="price">${p.price}</p>
+            <a class="btn" href="#" onclick="orderWA('${p.name}','${p.price}')">Order</a>
+          </div>
+        </div>
+      `;
+    });
+  }
+</script>
+
+<script>
+  function searchProduk() {
+    const keyword = document.getElementById('searchInput').value.toLowerCase();
+    const cards= document.querySelectorAll('.products .card');
+    cards.forEach(card => {
+      const namaProduk = card.querySelector('h3').innerText.toLocaleLowerCase();
+      if(namaProduk.includes(keyword)){
+        card.style.display ="";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  function orderWA(nama, harga) {
+    const nomorWA = '6285603575395';
+    const pesan = `Halo Admin IkankoiTasik%0AProduk: ${nama}%0AHarga: ${harga}`;
+    window.open(`https://wa.me/${nomorWA}?text=${pesan}`);
+  }
+</script>
+<script src="script.js"></script>
+</body>
+</html>

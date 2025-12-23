@@ -1,0 +1,118 @@
+/* ===== RESET ===== */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+background-color: #f4f6f8;
+color: #333;
+line-height: 1.6;
+}
+
+
+/* ===== HEADER ===== */
+header {
+background: linear-gradient(135deg, #0d47a1, #1976d2);
+color: #fff;
+padding: 20px 40px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+
+
+header h1 {
+font-size: 24px;
+letter-spacing: 1px;
+}
+
+
+nav a {
+color: #fff;
+margin-left: 20px;
+text-decoration: none;
+font-weight: 500;
+position: relative;
+}
+
+
+nav a::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+background: #ff9800;
+left: 0;
+bottom: -5px;
+transition: 0.3s;
+}
+
+
+nav a:hover::after {
+width: 100%;
+}
+
+
+/* ===== HERO SECTION ===== */
+.hero {
+background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+url('https://images.unsplash.com/photo-1522069213448-443a614da9b6') center/cover no-repeat;
+padding: 120px 40px;
+text-align: center;
+color: rgb(139, 168, 211);
+}
+
+
+.hero h2 {
+font-size: 42px;
+margin-bottom: 15px;
+}
+
+card {
+border: 1px solid #ddd;
+border-radius: 8px;
+box-shadow:  0 4px 8px rgba (0,0,0,0.1);
+overflow: :hidden;
+text-align: center;
+background-color: #fff;
+}
+card img {
+width:100%;
+heigth: auto;
+display: block;
+
+}
+card-body{
+    padding:15px;
+}
+.search-box {
+  padding:10px;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: :10px 20px 10px 20px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 10px rgba(25,118,210,0.2);
+}
